@@ -44,9 +44,3 @@ struct Vector3D {
 }
 
 extension Vector3D: Equatable { }
-
-extension Vector3D: CustomStringConvertible {
-    var description: String {
-        return "(\(x), \(y), \(z))"
-    }
-}

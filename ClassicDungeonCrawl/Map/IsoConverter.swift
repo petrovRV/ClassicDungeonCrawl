@@ -45,11 +45,11 @@ let spriteAnimationMap = [
         ]
 ]
 
-func getIdleAnimationFirstFrameNameForEntity(_ entity: Entity, referenceRotation: Rotation = .defaultRotation) -> String {
+func getIdleAnimationFirstFrameNameForEntity(_ entity: CreatureAppearance, referenceRotation: Rotation = .defaultRotation) -> String {
     getAnimationNameForEntity(entity, animation: "Idle", referenceRotation: referenceRotation) + "_0"
 }
 
-func getAnimationNameForEntity(_ entity: Entity, animation: String, referenceRotation: Rotation = .defaultRotation) -> String {
+func getAnimationNameForEntity(_ entity: CreatureAppearance, animation: String, referenceRotation: Rotation = .defaultRotation) -> String {
     let animationName = spriteAnimationMap[entity.sprite]?[animation] ?? "Idle"
     let viewRotation = entity.rotation.withReferenceRotation(referenceRotation)
     return "\(entity.sprite)_\(animationName)_\(viewRotation.rawValue)"

@@ -19,8 +19,27 @@
 		04F3A8FB2BC1825E00585721 /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A8F12BC1825D00585721 /* EntityView.swift */; };
 		04F3A8FC2BC1825E00585721 /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A8F22BC1825D00585721 /* Vector2D.swift */; };
 		04F3A8FD2BC1825E00585721 /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A8F32BC1825E00585721 /* Vector3D.swift */; };
-		04F3A8FE2BC1825E00585721 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A8F42BC1825E00585721 /* Entity.swift */; };
+		04F3A8FE2BC1825E00585721 /* CreatureAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A8F42BC1825E00585721 /* CreatureAppearance.swift */; };
+		04F3A9122BC2ADFC00585721 /* IsoTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A90C2BC2ADFC00585721 /* IsoTutorialTests.swift */; };
+		04F3A9132BC2ADFC00585721 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A90D2BC2ADFC00585721 /* MapTests.swift */; };
+		04F3A9142BC2ADFC00585721 /* ActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A90E2BC2ADFC00585721 /* ActionTests.swift */; };
+		04F3A9152BC2ADFC00585721 /* RotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A90F2BC2ADFC00585721 /* RotationTests.swift */; };
+		04F3A9162BC2ADFC00585721 /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A9102BC2ADFC00585721 /* EntityTests.swift */; };
+		04F3A9172BC2ADFC00585721 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A9112BC2ADFC00585721 /* ViewModelTests.swift */; };
+		04F3A91E2BC2D92D00585721 /* BottomActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A91D2BC2D92D00585721 /* BottomActions.swift */; };
+		04F3A9202BC2E93400585721 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A91F2BC2E93400585721 /* Creature.swift */; };
+		04F3A9222BC2EB2900585721 /* CreatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3A9212BC2EB2900585721 /* CreatureFactory.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F3A9072BC2ADE200585721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 042C58042BC17E0800A552A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 042C580B2BC17E0800A552A6;
+			remoteInfo = ClassicDungeonCrawl;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		042C580C2BC17E0800A552A6 /* ClassicDungeonCrawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicDungeonCrawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,11 +55,28 @@
 		04F3A8F12BC1825D00585721 /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
 		04F3A8F22BC1825D00585721 /* Vector2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
 		04F3A8F32BC1825E00585721 /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
-		04F3A8F42BC1825E00585721 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		04F3A8F42BC1825E00585721 /* CreatureAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureAppearance.swift; sourceTree = "<group>"; };
+		04F3A9032BC2ADE200585721 /* ClassicDungeonCrawlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassicDungeonCrawlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F3A90C2BC2ADFC00585721 /* IsoTutorialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoTutorialTests.swift; sourceTree = "<group>"; };
+		04F3A90D2BC2ADFC00585721 /* MapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
+		04F3A90E2BC2ADFC00585721 /* ActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTests.swift; sourceTree = "<group>"; };
+		04F3A90F2BC2ADFC00585721 /* RotationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationTests.swift; sourceTree = "<group>"; };
+		04F3A9102BC2ADFC00585721 /* EntityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
+		04F3A9112BC2ADFC00585721 /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		04F3A91D2BC2D92D00585721 /* BottomActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActions.swift; sourceTree = "<group>"; };
+		04F3A91F2BC2E93400585721 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		04F3A9212BC2EB2900585721 /* CreatureFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		042C58092BC17E0800A552A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F3A9002BC2ADE200585721 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				042C580E2BC17E0800A552A6 /* ClassicDungeonCrawl */,
+				04F3A9042BC2ADE200585721 /* ClassicDungeonCrawlTests */,
 				042C580D2BC17E0800A552A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				042C580C2BC17E0800A552A6 /* ClassicDungeonCrawl.app */,
+				04F3A9032BC2ADE200585721 /* ClassicDungeonCrawlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,18 +110,66 @@
 				042C581C2BC17E0900A552A6 /* Assets.xcassets */,
 				042C58392BC17F7600A552A6 /* ClassicDungeonCrawl.swift */,
 				04F3A8E92BC1824D00585721 /* ContentView.swift */,
-				04F3A8EC2BC1825D00585721 /* Action.swift */,
-				04F3A8F42BC1825E00585721 /* Entity.swift */,
-				04F3A8F12BC1825D00585721 /* EntityView.swift */,
-				04F3A8EB2BC1825D00585721 /* GameScene.swift */,
-				04F3A8F02BC1825D00585721 /* IsoConverter.swift */,
-				04F3A8ED2BC1825D00585721 /* Map.swift */,
-				04F3A8EE2BC1825D00585721 /* Rotation.swift */,
-				04F3A8F22BC1825D00585721 /* Vector2D.swift */,
-				04F3A8F32BC1825E00585721 /* Vector3D.swift */,
-				04F3A8EF2BC1825D00585721 /* ViewModel.swift */,
+				04F3A91C2BC2B03300585721 /* Entity */,
+				04F3A9182BC2AF7B00585721 /* UI */,
+				04F3A91A2BC2AFE000585721 /* Scenes */,
+				04F3A91B2BC2B01500585721 /* Map */,
 			);
 			path = ClassicDungeonCrawl;
+			sourceTree = "<group>";
+		};
+		04F3A9042BC2ADE200585721 /* ClassicDungeonCrawlTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F3A90E2BC2ADFC00585721 /* ActionTests.swift */,
+				04F3A9102BC2ADFC00585721 /* EntityTests.swift */,
+				04F3A90C2BC2ADFC00585721 /* IsoTutorialTests.swift */,
+				04F3A90D2BC2ADFC00585721 /* MapTests.swift */,
+				04F3A90F2BC2ADFC00585721 /* RotationTests.swift */,
+				04F3A9112BC2ADFC00585721 /* ViewModelTests.swift */,
+			);
+			path = ClassicDungeonCrawlTests;
+			sourceTree = "<group>";
+		};
+		04F3A9182BC2AF7B00585721 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				04F3A8F12BC1825D00585721 /* EntityView.swift */,
+				04F3A91D2BC2D92D00585721 /* BottomActions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		04F3A91A2BC2AFE000585721 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				04F3A8EB2BC1825D00585721 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		04F3A91B2BC2B01500585721 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				04F3A8EC2BC1825D00585721 /* Action.swift */,
+				04F3A8F02BC1825D00585721 /* IsoConverter.swift */,
+				04F3A8F32BC1825E00585721 /* Vector3D.swift */,
+				04F3A8F22BC1825D00585721 /* Vector2D.swift */,
+				04F3A8EE2BC1825D00585721 /* Rotation.swift */,
+				04F3A8ED2BC1825D00585721 /* Map.swift */,
+				04F3A8EF2BC1825D00585721 /* ViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		04F3A91C2BC2B03300585721 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				04F3A8F42BC1825E00585721 /* CreatureAppearance.swift */,
+				04F3A91F2BC2E93400585721 /* Creature.swift */,
+				04F3A9212BC2EB2900585721 /* CreatureFactory.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +192,24 @@
 			productReference = 042C580C2BC17E0800A552A6 /* ClassicDungeonCrawl.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04F3A9022BC2ADE200585721 /* ClassicDungeonCrawlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F3A9092BC2ADE200585721 /* Build configuration list for PBXNativeTarget "ClassicDungeonCrawlTests" */;
+			buildPhases = (
+				04F3A8FF2BC2ADE200585721 /* Sources */,
+				04F3A9002BC2ADE200585721 /* Frameworks */,
+				04F3A9012BC2ADE200585721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F3A9082BC2ADE200585721 /* PBXTargetDependency */,
+			);
+			name = ClassicDungeonCrawlTests;
+			productName = ClassicDungeonCrawlTests;
+			productReference = 04F3A9032BC2ADE200585721 /* ClassicDungeonCrawlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -118,6 +222,10 @@
 				TargetAttributes = {
 					042C580B2BC17E0800A552A6 = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					04F3A9022BC2ADE200585721 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 042C580B2BC17E0800A552A6;
 					};
 				};
 			};
@@ -135,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				042C580B2BC17E0800A552A6 /* ClassicDungeonCrawl */,
+				04F3A9022BC2ADE200585721 /* ClassicDungeonCrawlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				042C581D2BC17E0900A552A6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F3A9012BC2ADE200585721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,14 +279,38 @@
 				04F3A8FB2BC1825E00585721 /* EntityView.swift in Sources */,
 				04F3A8EA2BC1824D00585721 /* ContentView.swift in Sources */,
 				042C583B2BC17F7600A552A6 /* ClassicDungeonCrawl.swift in Sources */,
-				04F3A8FE2BC1825E00585721 /* Entity.swift in Sources */,
+				04F3A8FE2BC1825E00585721 /* CreatureAppearance.swift in Sources */,
+				04F3A91E2BC2D92D00585721 /* BottomActions.swift in Sources */,
+				04F3A9202BC2E93400585721 /* Creature.swift in Sources */,
 				04F3A8F82BC1825E00585721 /* Rotation.swift in Sources */,
 				04F3A8F92BC1825E00585721 /* ViewModel.swift in Sources */,
+				04F3A9222BC2EB2900585721 /* CreatureFactory.swift in Sources */,
 				04F3A8FD2BC1825E00585721 /* Vector3D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04F3A8FF2BC2ADE200585721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F3A9142BC2ADFC00585721 /* ActionTests.swift in Sources */,
+				04F3A9122BC2ADFC00585721 /* IsoTutorialTests.swift in Sources */,
+				04F3A9132BC2ADFC00585721 /* MapTests.swift in Sources */,
+				04F3A9162BC2ADFC00585721 /* EntityTests.swift in Sources */,
+				04F3A9172BC2ADFC00585721 /* ViewModelTests.swift in Sources */,
+				04F3A9152BC2ADFC00585721 /* RotationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F3A9082BC2ADE200585721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 042C580B2BC17E0800A552A6 /* ClassicDungeonCrawl */;
+			targetProxy = 04F3A9072BC2ADE200585721 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		042C58212BC17E0900A552A6 /* Debug */ = {
@@ -346,6 +486,42 @@
 			};
 			name = Release;
 		};
+		04F3A90A2BC2ADE200585721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P53899D5K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yp.ClassicDungeonCrawlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassicDungeonCrawl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClassicDungeonCrawl";
+			};
+			name = Debug;
+		};
+		04F3A90B2BC2ADE200585721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3P53899D5K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yp.ClassicDungeonCrawlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassicDungeonCrawl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClassicDungeonCrawl";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -363,6 +539,15 @@
 			buildConfigurations = (
 				042C58242BC17E0900A552A6 /* Debug */,
 				042C58252BC17E0900A552A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F3A9092BC2ADE200585721 /* Build configuration list for PBXNativeTarget "ClassicDungeonCrawlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F3A90A2BC2ADE200585721 /* Debug */,
+				04F3A90B2BC2ADE200585721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

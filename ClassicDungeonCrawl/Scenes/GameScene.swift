@@ -15,6 +15,8 @@ final class GameScene: SKScene {
     var rotation = Rotation.defaultRotation
     let cameraNode = SKCameraNode()
     let rootNode = SKNode()
+    
+    var isZoomed = false
         
     override func didMove(to view: SKView) {
         size = view.frame.size
@@ -43,7 +45,7 @@ final class GameScene: SKScene {
         }
               
         let map = viewModel.map
-        let entities = viewModel.entities
+        let entities = viewModel.entities.map { $0.appearance }
         
         let paths = entities.compactMap { ($0.currentAction as? MoveAction)?.path }
         
@@ -101,7 +103,12 @@ final class GameScene: SKScene {
         redraw()
     }
     
-    func getAnimationForEntity(_ entity: Entity, animation: String) -> SKAction {
+    func setCameraScale() {
+        isZoomed.toggle()
+        cameraNode.setScale(isZoomed ? 1 : 0.5)
+    }
+    
+    func getAnimationForEntity(_ entity: CreatureAppearance, animation: String) -> SKAction {
         let animationName = getAnimationNameForEntity(entity, animation: animation, referenceRotation: rotation)
         let frames = [
             "\(animationName)_0",
@@ -119,7 +126,7 @@ final class GameScene: SKScene {
         return animation
     }
     
-    func createFollowPathAnimationForEntity(_ entity: Entity) -> SKAction? {
+    func createFollowPathAnimationForEntity(_ entity: CreatureAppearance) -> SKAction? {
         guard let moveAction = entity.currentAction as? MoveAction else {
             return nil
         }
@@ -127,7 +134,7 @@ final class GameScene: SKScene {
         var movementActions = [SKAction]()
         let duration = 0.25
         var lastCoord = entity.position.xy
-        let stuntDouble = entity.copy()
+        var stuntDouble = entity
         for coord in moveAction.path {
             let newRotation = Rotation.fromLookDirection(coord.xy - lastCoord) ?? stuntDouble.rotation
             stuntDouble.rotation = newRotation
@@ -148,7 +155,7 @@ final class GameScene: SKScene {
         }
         
         let completeAction = SKAction.customAction(withDuration: 0.001) { [weak self] _, _ in
-            entity.completeCurrentAction()
+//            entity.completeCurrentAction()
             self?.redraw()
         }
         

@@ -10,14 +10,14 @@ import Combine
 
 final class ViewModel: ObservableObject {
     @Published var selectedTile: Vector3D?
-    @Published var selectedEntity: Entity?
+    @Published var selectedEntity: Creature?
     @Published var currentAction: Action?
     
     let map: Map
-    let entities: [Entity]
+    var entities: [Creature]
     var redraw: (() -> Void)?
     
-    init(map: Map, entities: [Entity]) {
+    init(map: Map, entities: [Creature]) {
         self.map = map
         self.entities = entities
     }
@@ -33,19 +33,19 @@ final class ViewModel: ObservableObject {
         if let currentAction = currentAction {
             if let selectedTile, let selectedEntity {
                 let action = type(of: currentAction)
-                    .make(in: map, for: selectedEntity, targetting: selectedTile)
+                    .make(in: map, for: selectedEntity.appearance, targetting: selectedTile)
                 self.currentAction = action
             }
         } else {
             selectedEntity = nil
-            if let entity = entities.first(where: { $0.position == tile }) {
+            if let entity = entities.first(where: { $0.appearance.position == tile }) {
                 selectedEntity = entity
             }
         }
     }
     
     func commitAction() {
-        selectedEntity?.currentAction = currentAction
+        selectedEntity?.appearance.currentAction = currentAction
         currentAction = nil
         redraw?()
     }

@@ -9,17 +9,7 @@ import SwiftUI
 import SpriteKit
 
 struct ContentView: View {
-    @StateObject var viewModel = ViewModel(map: Map(heightMap: [
-        [1,1,1,1,1],
-        [1,1,1,1,1],
-        [1,1,2,2,1],
-        [2,4,2,3,1],
-        [1,1,1,1,1],
-    ]), entities: [
-        Entity(sprite: "Knight", startPosition: Vector3D(x: 1, y: 1, z: 1)),
-        Entity(sprite: "Knight", startPosition: Vector3D(x: 3, y: 3, z: 3)),
-        Entity(sprite: "Rogue", startPosition: Vector3D(x: 4, y: 0, z: 1))
-    ])
+    @StateObject var viewModel: ViewModel
     
     let scene = GameScene()
     
@@ -27,9 +17,12 @@ struct ContentView: View {
         ZStack {
             SpriteView(scene: scene)
             VStack {
-                HStack {
-                    Spacer()
-                    if  viewModel.selectedEntity != nil {
+                if  viewModel.selectedEntity != nil {
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let topSafeAreaInset = windowScene.windows.first?.safeAreaInsets.top {
+                        EntityView(viewModel: viewModel)
+                            .padding(.top, topSafeAreaInset)
+                    } else {
                         EntityView(viewModel: viewModel)
                     }
                 }
@@ -47,18 +40,15 @@ struct ContentView: View {
                         .foregroundStyle(.white)
                 }
                 if let selectedEntity = viewModel.selectedEntity {
-                    Text("Selected entity: \(selectedEntity.sprite)")
+                    Text(selectedEntity.name)
                         .foregroundStyle(.white)
                 }
                 
-                HStack {
-                    Button("Rotate CCW") {
-                        scene.rotateCCW()
-                    }
-                    Button("Rotate CW") {
-                        scene.rotateCW()
-                    }                    
-                }
+                BottomActions(
+                    rotateCCWAction: { scene.rotateCCW() },
+                    setCameraScaleAction: { scene.setCameraScale() },
+                    rotateCWAction: { scene.rotateCW() }
+                ).padding(.bottom, 16)
             }
             .padding()
         }
@@ -66,10 +56,53 @@ struct ContentView: View {
         .onAppear {
             scene.viewModel = viewModel
         }
-            
+        
     }
 }
 
 #Preview {
-    ContentView()
+    let heightMap: [[Int]] = .init(repeating: .init(repeating: 1, count: 6), count: 10)
+    
+    let cF = CreatureFactoryImpl()
+    
+    let playerPositions = [
+        Vector3D(x: 3, y: 0, z: 1),
+        Vector3D(x: 2, y: 0, z: 1)
+    ]
+    
+    let skeletonMPositions = [
+        Vector3D(x: 2, y: 3, z: 1),
+        Vector3D(x: 3, y: 3, z: 1)
+    ]
+    
+    let skeletonRPositions = [
+        Vector3D(x: 0, y: 4, z: 1),
+        Vector3D(x: 5, y: 4, z: 1)]
+    
+    var entities = [Creature]()
+    for i in 0...1 {
+        let position = playerPositions[i]
+        let playerNumber = i+1
+        let ca = CreatureAppearance(sprite: playerNumber == 1 ? "Knight" : "Rogue", startPosition: position, rotation: .degrees135)
+        let p = cF.createPlayer(name: "Player \(playerNumber)", role: playerNumber == 1 ? .melee : .range, appearance: ca)
+        entities.append(p)
+    }
+    
+    for i in 0...1 {
+        let position = skeletonMPositions[i]
+        let ca = CreatureAppearance(sprite: "Knight", startPosition: position, rotation: .degrees315)
+        let s = cF.createSkeleton(role: .melee, appearance: ca)
+        entities.append(s)
+    }
+    
+    for i in 0...1 {
+        let position = skeletonRPositions[i]
+        let ca = CreatureAppearance(sprite: "Rogue", startPosition: position, rotation: .degrees315)
+        let s = cF.createSkeleton(role: .range, appearance: ca)
+        entities.append(s)
+    }
+    
+    let vm = ViewModel(map: Map(heightMap: heightMap), entities: entities)
+    
+    return ContentView(viewModel: vm)
 }

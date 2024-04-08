@@ -10,27 +10,27 @@ import SwiftUI
 struct EntityView: View {
     @ObservedObject var viewModel: ViewModel
     
-    var entity: Entity {
-        viewModel.selectedEntity ?? Entity(sprite: "Placeholder", startPosition: .random)
+    var entity: Creature {
+        viewModel.selectedEntity ?? Monster(name: "Placeholder", hp: 0, move: 0, appearance: CreatureAppearance(sprite: "Placeholder", startPosition: .random))
     }
     
     var body: some View {
         VStack {
-            Text("\(entity.sprite)")
+            Text("\(entity.name)")
                 .font(.headline)
                 .foregroundColor(.white)
-            Text("HP: ###/###")
+            Text("HP: \(entity.hp)/\(entity.hp))")
                 .font(.subheadline)
                 .foregroundColor(.red)
-            Text("MP: ###/###")
+            Text("Move: \(entity.move)/\(entity.move)")
                 .font(.subheadline)
                 .foregroundColor(.blue)
             
             if viewModel.currentAction == nil {
                 HStack {
                     Button("Move") {
-                        viewModel.currentAction = MoveAction(owner: entity, path: [])
-                        viewModel.redraw?()
+//                        entity.appearance.currentAction = MoveAction(owner: entity, path: [])
+//                        viewModel.redraw?()
                     }
                     .buttonStyle(BorderedProminentButtonStyle())
                     Button("Attack") {
